@@ -1,4 +1,3 @@
-
 import streamlit as st
 import tensorflow as tf
 import numpy as np
@@ -126,11 +125,11 @@ if retrain_folder is not None:
 
         # Create train/validation split (80% train, 20% val)
         train_ds = tf.keras.utils.image_dataset_from_directory(
-            tmpdir, image_size=IMG_SIZE, batch_size=16, label_mode="int",
+            tmpdir, image_size=IMG_SIZE, batch_size=8, label_mode="int",
             validation_split=0.2, subset="training", seed=42
         )
         val_ds = tf.keras.utils.image_dataset_from_directory(
-            tmpdir, image_size=IMG_SIZE, batch_size=16, label_mode="int",
+            tmpdir, image_size=IMG_SIZE, batch_size=8, label_mode="int",
             validation_split=0.2, subset="validation", seed=42
         )
 
