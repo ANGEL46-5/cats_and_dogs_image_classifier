@@ -1,3 +1,4 @@
+
 import streamlit as st
 import tensorflow as tf
 import numpy as np
@@ -133,12 +134,33 @@ if retrain_folder is not None:
             validation_split=0.2, subset="validation", seed=42
         )
 
-        # Loading indicator
         with st.spinner("Retraining model on new examples..."):
-            temp_model = tf.keras.models.clone_model(model)
-            temp_model.set_weights(model.get_weights())  # copy original weights
+            #  data augmentation layers
+            data_augmentation = tf.keras.Sequential([
+                tf.keras.layers.RandomFlip("horizontal"),
+                tf.keras.layers.RandomRotation(0.1),
+                tf.keras.layers.RandomZoom(0.1),
+            ])
 
-            history = temp_model.fit(train_ds, validation_data=val_ds, epochs=8)
+            # Clone the original model
+            temp_model = tf.keras.models.clone_model(model)
+            temp_model.set_weights(model.get_weights())
+
+            # Create a new model that chains augmentation and the original model
+            model_to_train = tf.keras.Sequential([
+                data_augmentation,
+                temp_model
+            ])
+
+         
+            model_to_train.compile(
+                optimizer='adam',
+                loss='binary_crossentropy',
+                metrics=['accuracy']
+            )
+
+            history = model_to_train.fit(train_ds, validation_data=val_ds, epochs=8)
+
 
         # Switch to retrained model
         model = temp_model
