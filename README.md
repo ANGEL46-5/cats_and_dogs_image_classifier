@@ -1,8 +1,8 @@
 # Cat vs. Dog Image Classifier
 
-An interactive web app that classifies images of cats and dogs. Built with Python, TensorFlow/Keras, and a user-friendly Streamlit interface. This was completed as part of the Accelerate Career Accelerator Program.
+An interactive web app that classifies images of cats and dogs. Built with Python, TensorFlow/Keras, and a user-friendly Streamlit interface. This project was completed as part of the AccelerateX Internship in AI (Cohort 2).
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://catsanddogsimageclassifier-mjzgtuqwzq6ijwbva2g2c2.streamlit.app/)
+### [Click Here to View the Live App!](https://catsanddogsimageclassifier-mjzgtuqwzq6ijwbva2g2c2.streamlit.app/)
 
 ---
 
