@@ -1,4 +1,3 @@
-
 import streamlit as st
 import tensorflow as tf
 import numpy as np
@@ -29,7 +28,7 @@ class_names = ["Cat", "Dog"]
 # Track model status 
 if "model_status" not in st.session_state:
     st.session_state.model_status = "Original Model"
-
+    st.session_state.last_retrained_file = None
 
 if st.session_state.model_status == "Original Model":
     st.success("Currently using: Original Model")
@@ -112,13 +111,14 @@ st.subheader("Retrain Model with New Examples")
 if st.button("Reset to Original Model"):
     model = tf.keras.models.load_model(MODEL_PATH)
     st.session_state.model_status = "Original Model"
+    st.session_state.last_retrained_file = None
     st.success("Switched back to original model!")
 
 retrain_folder = st.file_uploader(
     "Upload a ZIP folder with new training images (cats/dogs subfolders)", type="zip"
 )
 
-if retrain_folder is not None:
+if retrain_folder is not None and retrain_folder.name != st.session_state.last_retrained_file:
     with tempfile.TemporaryDirectory() as tmpdir:
         with zipfile.ZipFile(retrain_folder, "r") as zip_ref:
             zip_ref.extractall(tmpdir)
@@ -165,6 +165,7 @@ if retrain_folder is not None:
         # Switch to retrained model
         model = temp_model
         st.session_state.model_status = "Retrained Model"
+        st.session_state.last_retrained_file = retrain_folder.name
         st.success("Retraining complete. Now using retrained model for predictions!")
 
         #  Fresh Performance Statistics 
