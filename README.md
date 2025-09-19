@@ -1,6 +1,6 @@
-# Cat vs. Dog Image Classifier
+# Cats vs Dogs Classifier
 
-An interactive web app that classifies images of cats and dogs. Built with Python, TensorFlow/Keras, and a user-friendly Streamlit interface. This project was completed as part of the AccelerateX Internship in AI (Cohort 2).
+An interactive web app that classifies images of cats and dogs. Built with Python, TensorFlow/Keras, and a user-friendly Streamlit interface. 
 
 ### [Click Here to View the Live App!](https://catsanddogsimageclassifier-mjzgtuqwzq6ijwbva2g2c2.streamlit.app/)
 
@@ -12,7 +12,7 @@ Here is the model correctly identifying a cat and a dog.
 
 | Cat Prediction | Dog Prediction |
 | :---: | :---: |
-| ![Cat Prediction Screenshot](cat-prediction.png) | ![Dog Prediction Screenshot](dog-prediction.png) |
+| ![Cat Prediction Screenshot](https://raw.githubusercontent.com/ANGEL46-5/cats_and_dogs_image_classifier/main/cat-prediction.png) | ![Dog Prediction Screenshot](https://raw.githubusercontent.com/ANGEL46-5/cats_and_dogs_image_classifier/main/dog-prediction.png) |
 
 ---
 
@@ -29,8 +29,16 @@ Here is the model correctly identifying a cat and a dog.
 
 - **Model**: TensorFlow, Keras
 - **Web Framework**: Streamlit
-- **Core Libraries**: Python, NumPy, Pillow
-- **Plotting**: Matplotlib
+- [cite_start]**Core Libraries**: Python, NumPy, Pillow [cite: 1]
+- [cite_start]**Plotting**: Matplotlib [cite: 1]
+
+---
+## Project Files
+* **app.py**: The Python script that runs the interactive Streamlit web application.
+* **model_training.ipynb**: Jupyter Notebook containing the code for data preprocessing, model training, and performance evaluation.
+* **final_image_classifier.keras**: The final, trained Keras model file, ready for making predictions.
+* **requriements.txt**: A text file listing all the Python libraries required to run the project.
+* **training_curves.png**: An image visualizing the model's accuracy and loss curves during the training process.
 
 ---
 
@@ -53,7 +61,7 @@ To run this project locally, follow these steps:
 
 3.  **Install the required libraries:**
     ```sh
-    pip install -r requirements.txt
+    pip install -r requriements.txt
     ```
 
 ---
