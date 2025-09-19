@@ -29,8 +29,8 @@ Here is the model correctly identifying a cat and a dog.
 
 - **Model**: TensorFlow, Keras
 - **Web Framework**: Streamlit
-- [cite_start]**Core Libraries**: Python, NumPy, Pillow [cite: 1]
-- [cite_start]**Plotting**: Matplotlib [cite: 1]
+- **Core Libraries**: Python, NumPy, Pillow 
+- **Plotting**: Matplotlib 
 
 ---
 ## Project Files
@@ -39,6 +39,7 @@ Here is the model correctly identifying a cat and a dog.
 * **final_image_classifier.keras**: The final, trained Keras model file, ready for making predictions.
 * **requriements.txt**: A text file listing all the Python libraries required to run the project.
 * **training_curves.png**: An image visualizing the model's accuracy and loss curves during the training process.
+* **cat_prediction.png & dog_prediction.png**: Example images showing the model's predictions.
 
 ---
 
